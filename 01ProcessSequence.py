@@ -16,7 +16,6 @@ df = df.sort_values(by='Length', ascending=False).drop_duplicates('Primary_Symbo
 
 fasta_sequences = {}
 for record in SeqIO.parse("uniprotkb_AND_model_organism_9606_AND_r_2026_04_22.fasta", "fasta"): # from Uniport
-    # UniProt 的 FASTA ID 格式通常是 db|ID|EntryName
     accession = record.id.split('|')[1]
     fasta_sequences[accession] = str(record.seq)
 
